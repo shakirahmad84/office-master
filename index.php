@@ -128,63 +128,44 @@
 
          <!-- Begin Services Row 1 -->
          <div class="row services-row services-row-head services-row-1">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-               <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
-                  <p class="services-icon"><span class="fa fa-android fa-5x"></span></p>
-                  <h4 class="services-title">Android</h4>
-                  <p class="services-body">Cras interdum placerat libero vel tempor. Curabitur gravida iaculis erat quis dignissim.</p>
-                  <p class="services-more"><a href="#">Find Out More</a></p>
-               </div>
-            </div>
+           
+            <?php
+            $ebit_post = NULL;
+            $ebit_post = new WP_Query(array(
+               'post_type'      => 'service',
+               'posts_per_page' =>  -1,
+               'order'          =>  'ASC'
+            ));
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-               <div class="services-group wow animated zoomIn" data-wow-offset="40">
-                  <p class="services-icon"><i class="fa fa-apple fa-5x"></i></p>
-                  <h4 class="services-title">Apple</h4>
-                  <p class="services-body">Cras interdum placerat libero vel tempor. Curabitur gravida iaculis erat quis dignissim.</p>
-                  <p class="services-more"><a href="#">Find Out More</a></p>
-               </div>
-            </div>
+            if($ebit_post->have_posts()){
+               while($ebit_post->have_posts()){
+               $ebit_post->the_post();
+               $service_icon = get_post_meta(get_the_ID(), 'service_icon', true);
+               $service_desc = get_post_meta(get_the_ID(), 'service_desc', true);
+               $service_link = get_post_meta(get_the_ID(), 'service_link', true);
+               $service_link_title = get_post_meta(get_the_ID(), 'service_link_title', true);
+               $animation_type = get_post_meta(get_the_ID(), 'animation_type', true);
+            ?>
 
+            <!-- Begin Service Single Item -->
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-               <div class="services-group wow animated fadeInRight" data-wow-offset="40">
-                  <p class="services-icon"><i class="fa fa-thumbs-o-up fa-5x"></i></p>
-                  <h4 class="services-title">EASY TO USE</h4>
-                  <p class="services-body">Cras interdum placerat libero vel tempor. Curabitur gravida iaculis erat quis dignissim.</p>
-                  <p class="services-more"><a href="#">Find Out More</a></p>
+               <div class="services-group wow animated <?php echo $animation_type; ?>" data-wow-offset="40">
+                  <p class="services-icon"><span class="fa <?php echo $service_icon; ?> fa-5x"></span></p>
+                  <h4 class="services-title"><?php the_title(); ?></h4>
+                  <p class="services-body"><?php echo $service_desc; ?></p>
+                  <p class="services-more"><a href="<?php echo $service_link; ?>"><?php echo $service_link_title; ?></a></p>
                </div>
             </div>
-         </div>
-         <!-- End Serivces Row 1 -->
+            <!-- End Service Single Item -->
 
-         <!-- Begin Services Row 2 -->
-         <div class="row services-row services-row-tail services-row-2">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-               <div class="services-group wow animated fadeInLeft" data-wow-offset="40">
-                  <p class="services-icon"><span class="fa fa-windows fa-5x"></span></p>
-                  <h4 class="services-title">Windows</h4>
-                  <p class="services-body">Cras interdum placerat libero vel tempor. Curabitur gravida iaculis erat quis dignissim.</p>
-                  <p class="services-more"><a href="#">Find Out More</a></p>
-               </div>
-            </div>
+            <?php 
+            }
+            }else{
+               echo "Service not set";
+            } 
+            wp_reset_postdata();
+            ?>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-               <div class="services-group wow animated zoomIn" data-wow-offset="40">
-                  <p class="services-icon"><i class="fa fa-eye fa-5x"></i></p>
-                  <h4 class="services-title">RETINA READY</h4>
-                  <p class="services-body">Cras interdum placerat libero vel tempor. Curabitur gravida iaculis erat quis dignissim.</p>
-                  <p class="services-more"><a href="#">Find Out More</a></p>
-               </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-               <div class="services-group wow animated fadeInRight" data-wow-offset="40">
-                  <p class="services-icon"><i class="fa fa-cube fa-5x"></i></p>
-                  <h4 class="services-title">Cubic</h4>
-                  <p class="services-body">Cras interdum placerat libero vel tempor. Curabitur gravida iaculis erat quis dignissim.</p>
-                  <p class="services-more"><a href="#">Find Out More</a></p>
-               </div>
-            </div>
          </div>
          <!-- End Serivces Row 2 -->
 

@@ -56,9 +56,11 @@ function office_master_fallback_menu(){ ?>
 
 // Slider
 function office_master_custom_post(){
+   
+   // Slider Custom Post Register
    register_post_type('slider', array(
       'labels' => array(
-         'name'         => 'Main Slider',
+         'name'         => 'Slider',
          'menu_name'    => 'Slider Menu',
          'all_items'    => 'All Sliders',
          'add_new'      => 'Add New Slide',
@@ -67,6 +69,20 @@ function office_master_custom_post(){
       'public' => true,
       'supports' => array(
          'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes'
+      )
+   ));
+   // Service Custom Post Register
+   register_post_type('service', array(
+      'labels' => array(
+         'name'         => 'Service',
+         'menu_name'    => 'Service Menu',
+         'all_items'    => 'All Services',
+         'add_new'      => 'Add New Service',
+         'add_new_item' => 'Add new Service item'
+      ),
+      'public' => true,
+      'supports' => array(
+         'title', 'revisions', 'custom-fields', 'page-attributes'
       )
    ));
 }
