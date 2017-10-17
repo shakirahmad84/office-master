@@ -3,6 +3,10 @@
 // Theme Support
 function office_master_theme_support(){
    add_theme_support('title-tag');
+   
+   register_nav_menus(array(
+      'primary-menu'   => 'Primary Menu'
+   ));
 }
 add_action('after_setup_theme', 'office_master_theme_support');
 
@@ -33,3 +37,16 @@ function footer_extra_script(){
    <?php
 }
 add_action('wp_footer', 'footer_extra_script', 30);
+
+
+// Fallback Menu
+function office_master_fallback_menu(){ ?>
+<ul class="nav navbar-nav pull-right">
+   <li class="active"><a href="">Home</a></li>
+   <li><a href="">About</a></li>
+   <li><a href="">Blog</a></li>
+   <li><a href="">Team</a></li>
+   <li><a href=""><span>Contact</span></a></li>
+</ul>
+<?php
+}

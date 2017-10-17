@@ -24,33 +24,21 @@
 
          <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand wow fadeInDownBig" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slider/Office.png" width="100" alt="Office"></a>
          </div>
 
          <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav pull-right">
-               <li class="active">
-                  <a href="index.html">Home</a>
-               </li>
-               <li>
-                  <a href="about.html">About</a>
-               </li>
-               <li>
-                  <a href="blog.html">Blog</a>
-               </li>
-               <li>
-                  <a href="team.html">Team</a>
-               </li>
-               <li>
-                  <a href="contact.html"><span>Contact</span></a>
-               </li>
-            </ul>
+         <?php wp_nav_menu(array(
+            'theme_location' =>  'primary-menu',
+            'fallback_cb'    =>  'office_master_fallback_menu',
+            'container'      =>  '',
+            'menu_class'     =>  'nav navbar-nav pull-right'
+         )); ?>
          </div>
       </div>
    </nav>
@@ -239,10 +227,6 @@
    <div class="copyright text center">
       <p>&copy; Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
    </div>
-
-
-
-
    
    <?php wp_footer(); ?>
 </body>

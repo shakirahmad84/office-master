@@ -8,3 +8,15 @@ Version: 1.0
 Tags: office, business
 Text Domain: ebit
 */
+
+.navbar-default .navbar-nav > .current-menu-item > a,
+.navbar-default .navbar-nav > .current-menu-item > a:hover,
+.navbar-default .navbar-nav > .current-menu-item > a:focus {
+   color: #fff;
+   background-color: #6BAAA8;
+}
+
+.current-menu-item {
+   background: #74B9B9 !important;
+   color: white;
+}
