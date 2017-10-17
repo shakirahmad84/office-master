@@ -3,6 +3,8 @@
 // Theme Support
 function office_master_theme_support(){
    add_theme_support('title-tag');
+   add_theme_support('post-thumbnails');
+   add_image_size('slide-img', 1500, 500, true);
    
    register_nav_menus(array(
       'primary-menu'   => 'Primary Menu'
@@ -50,3 +52,22 @@ function office_master_fallback_menu(){ ?>
 </ul>
 <?php
 }
+
+
+// Slider
+function office_master_custom_post(){
+   register_post_type('slider', array(
+      'labels' => array(
+         'name'         => 'Main Slider',
+         'menu_name'    => 'Slider Menu',
+         'all_items'    => 'All Sliders',
+         'add_new'      => 'Add New Slide',
+         'add_new_item' => 'Add new slide item'
+      ),
+      'public' => true,
+      'supports' => array(
+         'title', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes'
+      )
+   ));
+}
+add_action('init', 'office_master_custom_post');

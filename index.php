@@ -5,7 +5,7 @@
 
    <meta charset="<?php bloginfo('charset'); ?>">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
    <!-- Favicon and touch icons -->
    <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/ico/favicon.ico">
    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/ico/apple-touch-icon-144-precomposed.png">
@@ -33,7 +33,7 @@
          </div>
 
          <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
-         <?php wp_nav_menu(array(
+            <?php wp_nav_menu(array(
             'theme_location' =>  'primary-menu',
             'fallback_cb'    =>  'office_master_fallback_menu',
             'container'      =>  '',
@@ -52,53 +52,62 @@
          <div class="row">
             <div id="carousel-1" class="carousel slide">
 
-               <!-- Indicators -->
-               <ol class="carousel-indicators visible-lg">
-                  <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-1" data-slide-to="1"></li>
-                  <li data-target="#carousel-1" data-slide-to="2"></li>
-               </ol>
-
                <!-- Wrapper for slides -->
                <div class="carousel-inner">
-                  <!-- Begin Slide 1 -->
-                  <div class="item active">
-                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slider/slide2.jpg" height="400" alt="">
-                     <div class="carousel-caption">
-                        <h3 class="carousel-title hidden-xs">Office BOOTSTRAP TEMPLATE</h3>
-                        <p class="carousel-body">RESPONSIVE \ MULTI PAGE</p>
-                     </div>
-                  </div>
-                  <!-- End Slide 1 -->
+                  <?php
+                  $ebit_post = NULL;
+                  $ebit_post = new WP_Query(array(
+                     'post_type'      => 'slider',
+                     'posts_per_page' =>  -1
+                  ));
+                  
+                  if($ebit_post->have_posts()){
+                     $x=0;
+                     while($ebit_post->have_posts()){
+                     $x++;
+                     $ebit_post->the_post();
+                     $slider_caption = get_post_meta(get_the_ID(), 'slider_caption', true);
+                  ?>
 
-                  <!-- Begin Slide 2 -->
-                  <div class="item">
-                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slider/slide4.jpg" height="400" alt="">
+                  <!-- Begin Slide Item -->
+                  <div class="item <?php if($x==1){echo 'active';} ?>">
+                     <?php the_post_thumbnail('slide-img'); ?>
                      <div class="carousel-caption">
-                        <h3 class="carousel-title hidden-xs">EASY TO CUSTOMIZE</h3>
-                        <p class="carousel-body">BEAUTIFUL \ CLEAN \ MINIMAL</p>
+                        <h3 class="carousel-title hidden-xs"><?php the_title(); ?></h3>
+                        <p class="carousel-body"><?php echo $slider_caption; ?></p>
                      </div>
                   </div>
-                  <!-- End Slide 2 -->
+                  <!-- End Slide Item -->
 
-                  <!-- Begin Slide 3 -->
-                  <div class="item">
-                     <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slider/slide2.jpg" height="400" alt="">
-                     <div class="carousel-caption">
-                        <h3 class="carousel-title hidden-xs">MULTI-PURPOSE TEMPLATE</h3>
-                        <p class="carousel-body">PORTFOLIO \ CORPORATE \ CREATIVE</p>
-                     </div>
-                  </div>
-                  <!-- End Slide 3 -->
+                  <?php 
+                  }
+                  }else{
+                     echo "Slider not set";
+                  } 
+                  wp_reset_postdata();
+                  ?>
                </div>
+               
+               <!-- Indicators -->
+               <ol class="carousel-indicators visible-lg">
+               <?php
+               for($i=0; $i<$x; $i++){
+               ?>
+               <li data-target="#carousel-1" data-slide-to="<?php echo $i; ?>" class="<?php if($i==0){echo 'active';} ?>"></li>
+               <?php                  
+               }   
+               ?>
+                  
+
+               </ol>
 
                <!-- Controls -->
                <a class="left carousel-control" href="#carousel-1" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+               </a>
                <a class="right carousel-control" href="#carousel-1" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+               </a>
             </div>
          </div>
       </div>
@@ -227,7 +236,7 @@
    <div class="copyright text center">
       <p>&copy; Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
    </div>
-   
+
    <?php wp_footer(); ?>
 </body>
 
