@@ -4,21 +4,8 @@
 <head>
 
    <meta charset="<?php bloginfo('charset'); ?>">
-
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <!-- CSS -->
-   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
-   <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-   <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
    
-   <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/bootstrap/css/bootstrap.css">
-   <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/css/font-awesome.min.css">
-   <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/css/style.css">
-   <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/css/animate.min.css">
-   <link rel="stylesheet" type="text/css" media="all" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/css/style-projects.css">
-
-
    <!-- Favicon and touch icons -->
    <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/ico/favicon.ico">
    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/ico/apple-touch-icon-144-precomposed.png">
@@ -254,13 +241,8 @@
    </div>
 
 
-   <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri()); ?>/js/jquery-1.10.2.min.js"></script>
-   <script src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/bootstrap/js/bootstrap.min.js"></script>
-   <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/wow.min.js"></script>
-   <script>
-      new WOW().init();
 
-   </script>
+
    
    <?php wp_footer(); ?>
 </body>
