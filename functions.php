@@ -5,6 +5,7 @@ function office_master_theme_support(){
    add_theme_support('title-tag');
    add_theme_support('post-thumbnails');
    add_image_size('slide-img', 1500, 500, true);
+   add_image_size('team-img', 80, 100, true);
    
    register_nav_menus(array(
       'primary-menu'   => 'Primary Menu'
@@ -83,6 +84,20 @@ function office_master_custom_post(){
       'public' => true,
       'supports' => array(
          'title', 'revisions', 'custom-fields', 'page-attributes'
+      )
+   ));
+   // Service Custom Post Register
+   register_post_type('team', array(
+      'labels' => array(
+         'name'         => 'Team',
+         'menu_name'    => 'Team Menu',
+         'all_items'    => 'All Team Member',
+         'add_new'      => 'Add New Team Member',
+         'add_new_item' => 'Add new Team Member'
+      ),
+      'public' => true,
+      'supports' => array(
+         'title', 'revisions', 'page-attributes', 'thumbnail'
       )
    ));
 }

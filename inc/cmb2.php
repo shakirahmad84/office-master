@@ -90,4 +90,33 @@ function office_master_cmb2(){
      'type'       => 'text',
    ) );
    
+   
+   // Team Metabox
+   $team_member = new_cmb2_box( array(
+     'id'            => 'team_metabox',
+     'title'         => __( 'Team Metabox', 'office_master' ),
+     'object_types'  => array( 'team' ),
+   ) );
+   
+   $team_member->add_field( array(
+     'name'       => __( 'Team Member Designation', 'office_master' ),
+     'desc'       => __( 'Write here your team member designation', 'office_master' ),
+     'id'         => $pref . 'team_designation',
+     'type'       => 'text',
+   ) );
+   
+   $team_member->add_field( array(
+     'name'       => __( 'BlockQuote Color', 'office_master' ),
+     'desc'       => __( 'Write here your blockquote color class name', 'office_master' ),
+     'id'         => $pref . 'team_blockquote',
+     'type'       => 'text',
+   ) );
+   
+   $team_member->add_field( array(
+     'name'       => __( 'Animation Type', 'office_master' ),
+     'desc'       => __( 'Write here your animation class name', 'office_master' ),
+     'id'         => $pref . 'team_animation',
+     'type'       => 'text',
+   ) );
+   
 }
