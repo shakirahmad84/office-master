@@ -66,7 +66,7 @@
                      while($ebit_post->have_posts()){
                      $x++;
                      $ebit_post->the_post();
-                     $slider_caption = get_post_meta(get_the_ID(), 'slider_caption', true);
+                     $slider_caption = get_post_meta(get_the_ID(), '_office-master_slider_caption', true);
                   ?>
 
                   <!-- Begin Slide Item -->
@@ -150,7 +150,10 @@
             <!-- Begin Service Single Item -->
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                <div class="services-group wow animated <?php echo $animation_type; ?>" data-wow-offset="40">
-                  <p class="services-icon"><span class="fa <?php echo $service_icon; ?> fa-5x"></span></p>
+               <?php foreach($service_icon as $single_icon){ ?>
+                  <p class="services-icon"><span class="fa <?php echo $single_icon; ?> fa-5x"></span></p>
+                  <?php } ?>
+                  
                   <h4 class="services-title"><?php the_title(); ?></h4>
                   <p class="services-body"><?php echo $service_desc; ?></p>
                   <p class="services-more"><a href="<?php echo $service_link; ?>"><?php echo $service_link_title; ?></a></p>

@@ -17,7 +17,7 @@ function office_master_cmb2(){
    $service_item = new_cmb2_box( array(
      'id'            => 'service_metabox',
      'title'         => __( 'Service Metabox', 'office_master' ),
-     'object_types'  => array( 'service', ),
+     'object_types'  => array( 'service' ),
    ) );
    
    $service_item->add_field( array(
@@ -25,6 +25,7 @@ function office_master_cmb2(){
      'desc'       => __( 'Write here your service icon\'s font awesome name', 'office_master' ),
      'id'         => $pref . 'service_icon',
      'type'       => 'text',
+     'repeatable'=> TRUE,
    ) );
    
    $service_item->add_field( array(
@@ -56,5 +57,37 @@ function office_master_cmb2(){
    ) );
    
    
+   // Slider Metabox
+   $slider_item = new_cmb2_box( array(
+     'id'            => 'slider_metabox',
+     'title'         => __( 'Slider Metabox', 'office_master' ),
+     'object_types'  => array( 'slider', 'service', 'page' ),
+   ) );
+   
+   $slider_item->add_field( array(
+     'name'       => __( 'Slider Caption', 'office_master' ),
+     'desc'       => __( 'Write here your slider caption', 'office_master' ),
+     'id'         => $pref . 'slider_caption',
+     'type'       => 'text',
+   ) );
+   
+   
+   // Slider Metabox
+   $special_page = new_cmb2_box( array(
+     'id'            => 'special_metabox',
+     'title'         => __( 'Special Metabox', 'office_master' ),
+     'object_types'  => array( 'page' ),
+     'show_on'       => array(
+         'key'   => 'id',
+         'value' => '21'
+     ),
+   ) );
+   
+   $special_page->add_field( array(
+     'name'       => __( 'Special Meta Caption', 'office_master' ),
+     'desc'       => __( 'Write here your special caption', 'office_master' ),
+     'id'         => $pref . 'slider_caption',
+     'type'       => 'text',
+   ) );
    
 }
