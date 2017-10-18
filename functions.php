@@ -87,3 +87,6 @@ function office_master_custom_post(){
    ));
 }
 add_action('init', 'office_master_custom_post');
+
+
+include_once 'inc/cmb2.php';

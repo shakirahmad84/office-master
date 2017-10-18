@@ -140,11 +140,11 @@
             if($ebit_post->have_posts()){
                while($ebit_post->have_posts()){
                $ebit_post->the_post();
-               $service_icon = get_post_meta(get_the_ID(), 'service_icon', true);
-               $service_desc = get_post_meta(get_the_ID(), 'service_desc', true);
-               $service_link = get_post_meta(get_the_ID(), 'service_link', true);
-               $service_link_title = get_post_meta(get_the_ID(), 'service_link_title', true);
-               $animation_type = get_post_meta(get_the_ID(), 'animation_type', true);
+               $service_icon = get_post_meta(get_the_ID(), '_office-master_service_icon', true);
+               $service_desc = get_post_meta(get_the_ID(), '_office-master_service_desc', true);
+               $service_link = get_post_meta(get_the_ID(), '_office-master_service_link', true);
+               $service_link_title = get_post_meta(get_the_ID(), '_office-master_service_link_title', true);
+               $animation_type = get_post_meta(get_the_ID(), '_office-master_animation_type', true);
             ?>
 
             <!-- Begin Service Single Item -->
