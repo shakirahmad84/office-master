@@ -6,7 +6,7 @@
 ?>
 
    <div class="row container-kamn">
-      <img src="<?php echo $page_thumb['0']; ?>" width="100%" class="blog-post" alt="Feature-img" align="right" width="100%">
+      <img src="<?php echo $page_thumb['0']; ?>" width="100%" class="blog-post" alt="Feature-img" align="right">
    </div>
 
    <?php

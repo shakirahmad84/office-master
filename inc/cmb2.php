@@ -61,7 +61,8 @@ function office_master_cmb2(){
    $slider_item = new_cmb2_box( array(
      'id'            => 'slider_metabox',
      'title'         => __( 'Slider Metabox', 'office_master' ),
-     'object_types'  => array( 'slider', 'service', 'page' ),
+//     'object_types'  => array( 'slider', 'service', 'page' ),
+     'object_types'  => array( 'slider' ),
    ) );
    
    $slider_item->add_field( array(
@@ -116,6 +117,20 @@ function office_master_cmb2(){
      'name'       => __( 'Animation Type', 'office_master' ),
      'desc'       => __( 'Write here your animation class name', 'office_master' ),
      'id'         => $pref . 'team_animation',
+     'type'       => 'text',
+   ) );
+   
+   // Post Metabox
+   $post_metabox = new_cmb2_box( array(
+     'id'            => 'post_metabox',
+     'title'         => __( 'Post Metabox', 'office_master' ),
+     'object_types'  => array( 'post' ),
+   ) );
+   
+   $post_metabox->add_field( array(
+     'name'       => __( 'Post Icon', 'office_master' ),
+     'desc'       => __( 'Write here your post icon class name', 'office_master' ),
+     'id'         => $pref . 'post_icon_class',
      'type'       => 'text',
    ) );
    

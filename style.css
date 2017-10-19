@@ -28,3 +28,11 @@ Text Domain: ebit
 .services-row {
    margin-top: -30px;
 }
+
+span.label {
+   margin-right: 2px;
+}
+
+.label a {
+   color: #fff;
+}
