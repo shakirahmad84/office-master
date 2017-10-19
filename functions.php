@@ -7,6 +7,7 @@ function office_master_theme_support(){
    add_image_size('slide-img', 1500, 500, true);
    add_image_size('team-img', 100, 80, true);
    add_image_size('post-img', 850, 490, true);
+   add_image_size('sidebar-slide-img', 265, 192, true);
    
    register_nav_menus(array(
       'primary-menu'   => 'Primary Menu'

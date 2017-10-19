@@ -36,3 +36,31 @@ span.label {
 .label a {
    color: #fff;
 }
+
+.nav-links {
+   border: 1px solid #ddd;
+   border-radius: 3px;
+}
+
+.nav-links .page-numbers {
+   width: 35px;
+   height: 35px;
+   line-height: 35px;
+   display: inline-block;
+   text-align: center;
+   border-left: 1px solid #ddd;
+   background-color: #fff;
+   margin-left: -4px;
+}
+
+span.page-numbers.current {
+   background: #428bca;
+   color: #fff;
+}
+
+span.page-numbers:hover:not(.current) {
+   color: #2a6496;
+   background-color: #eee;
+   border-color: #ddd;
+}
+
