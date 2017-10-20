@@ -134,4 +134,45 @@ function office_master_cmb2(){
      'type'       => 'text',
    ) );
    
+   // About Page Sidebar Metabox
+   $about_page_group = new_cmb2_box( array(
+     'id'            => 'about_group_metabox',
+     'title'         => __( 'About Page Metabox', 'office_master' ),
+     'object_types'  => array( 'page' ),
+      'show_on'      => array(
+         'key' => 'ID',
+         'value' => 19
+        )
+   ) );
+   
+   $about_group_para = $about_page_group->add_field( array(
+     'name'       => __( 'Groupable Field', 'office_master' ),
+     'id'         => $pref . 'about_group_meta_field',
+     'type'       => 'group',
+   ) );
+   
+   $about_page_group->add_group_field($about_group_para, array(
+     'name'       => __( 'Heading', 'office_master' ),
+     'id'         => $pref . 'heading',
+     'type'       => 'text',
+   ) );
+   
+   $about_page_group->add_group_field($about_group_para, array(
+     'name'       => __( 'About Description', 'office_master' ),
+     'id'         => $pref . 'about_description',
+     'type'       => 'text',
+   ) );
+   
+   $about_page_group->add_group_field($about_group_para, array(
+     'name'       => __( 'A tag hash link', 'office_master' ),
+     'id'         => $pref . 'hash_link',
+     'type'       => 'text',
+      'repeatable'=> true
+   ) );
+   
+   
+   
+   
+   
+   
 }
