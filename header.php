@@ -12,13 +12,13 @@
    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo esc_url(get_template_directory_uri()); ?>assets/ico/apple-touch-icon-114-precomposed.png">
    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/ico/apple-touch-icon-72-precomposed.png">
    <link rel="apple-touch-icon-precomposed" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/ico/apple-touch-icon-57-precomposed.png">
+   
+   <?php wp_head(); ?>
 </head>
-<?php wp_head(); ?>
 
 <body>
 
    <!-- Header -->
-
    <nav id="navbar-section" class="navbar navbar-default navbar-static-top navbar-sticky" role="navigation">
       <div class="container">
 
@@ -34,13 +34,12 @@
 
          <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
             <?php wp_nav_menu(array(
-            'theme_location' =>  'primary-menu',
-            'fallback_cb'    =>  'office_master_fallback_menu',
-            'container'      =>  '',
-            'menu_class'     =>  'nav navbar-nav pull-right'
-         )); ?>
+               'theme_location' =>  'primary-menu',
+               'fallback_cb'    =>  'office_master_fallback_menu',
+               'container'      =>  '',
+               'menu_class'     =>  'nav navbar-nav pull-right'
+            )); ?>
          </div>
       </div>
    </nav>
-
    <!-- End Header -->

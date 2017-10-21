@@ -34,9 +34,9 @@ get_header(); ?>
                <p><?php echo $single['_office-master_about_description']; ?></p>
 
             <?php if(is_array($single['_office-master_hash_link'])){                                    
-               foreach( $single['_office-master_hash_link'] as $child_single){ ?>
+               foreach( $single['_office-master_hash_link'] as $key=>$child_single){ ?>
                  
-                  <a href="<?php echo $child_single; ?>">Link</a><br>
+                  <a href="<?php echo $child_single; ?>"><?php echo $single['_office-master_hash_link_title'][$key]; ?></a><br>
 
             <?php } } } ?>
                 

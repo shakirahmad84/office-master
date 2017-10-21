@@ -64,3 +64,15 @@ span.page-numbers:hover:not(.current) {
    border-color: #ddd;
 }
 
+.blog-title a {
+   color: #385A30;
+}
+
+.page_content {
+   padding: 100px 30px;
+   background-color: #e3e3e3;
+}
+
+h2.page_title {
+   text-align: center;
+}

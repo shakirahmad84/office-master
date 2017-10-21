@@ -3,8 +3,7 @@
 <?php
    $ebit_post = NULL;
    $ebit_post = new WP_Query(array(
-      'post_type'      => 'page',
-      'posts_per_page' =>  -1
+      'post_type'      => 'page'
    ));
 
    if($ebit_post->have_posts()){
@@ -36,13 +35,13 @@
             <div class="col-md-9">
 
                <?php 
-         if(have_posts()): while(have_posts()): the_post(); 
-         $post_icon_class = get_post_meta( get_the_ID(), '_office-master_post_icon_class', true );
-      ?>
+                  if(have_posts()): while(have_posts()): the_post(); 
+                  $post_icon_class = get_post_meta( get_the_ID(), '_office-master_post_icon_class', true );
+               ?>
                <div class="blog-post">
                   <h1 class="blog-title">
                      <i class="fa <?php echo $post_icon_class; ?>"></i>
-                     <?php the_title(); ?>
+                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                   </h1>
                   <br>
                   <?php the_post_thumbnail('post-img'); ?>
@@ -95,7 +94,7 @@
 
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner">
-                                      <?php
+                     <?php
                   $ebit_post = NULL;
                   $ebit_post = new WP_Query(array(
                      'post_type'      => 'slider',
@@ -110,13 +109,13 @@
                      $slider_caption = get_post_meta(get_the_ID(), '_office-master_slider_caption', true);
                   ?>
 
-                  <!-- Begin Slide Item -->
-                  <div class="item <?php if($x==1){echo 'active';} ?>">
-                     <?php the_post_thumbnail('sidebar-slide-img'); ?>
-                  </div>
-                  <!-- End Slide Item -->
+                        <!-- Begin Slide Item -->
+                        <div class="item <?php if($x==1){echo 'active';} ?>">
+                           <?php the_post_thumbnail('sidebar-slide-img'); ?>
+                        </div>
+                        <!-- End Slide Item -->
 
-                  <?php 
+                        <?php 
                   }
                   }else{
                      echo "Slider not set";
@@ -124,18 +123,14 @@
                   wp_reset_postdata();
                   ?>
                   </div>
-                  
+
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
-                     <?php
-                     for($i=0; $i<$x; $i++){
-                     ?>
-                     <li data-target="#carousel-example-generic" data-slide-to="<?php echo $i; ?>" class="<?php if($i==0){echo 'active';} ?>"></li>
-                     <?php                  
-                     }   
-                     ?>
+                     <?php for($i=0; $i<$x; $i++){?>
+                        <li data-target="#carousel-example-generic" data-slide-to="<?php echo $i; ?>" class="<?php if($i==0){echo 'active';} ?>"></li>
+                     <?php } ?>
                   </ol>
-                  
+
                   <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                      <span class="glyphicon glyphicon-chevron-left"></span>

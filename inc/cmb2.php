@@ -170,6 +170,13 @@ function office_master_cmb2(){
       'repeatable'=> true
    ) );
    
+   $about_page_group->add_group_field($about_group_para, array(
+     'name'       => __( 'A tag hash link title', 'office_master' ),
+     'id'         => $pref . 'hash_link_title',
+     'type'       => 'text',
+      'repeatable'=> true
+   ) );
+   
    
    
    
