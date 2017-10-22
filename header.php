@@ -29,7 +29,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand wow fadeInDownBig" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/slider/Office.png" width="100" alt="Office"></a>
+            <a class="navbar-brand wow fadeInDownBig" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php global $office_master; echo $office_master['site_logo']['url']; ?>" width="100" alt="Office"></a>
          </div>
 
          <div id="navbar-spy" class="collapse navbar-collapse navbar-responsive-collapse">
