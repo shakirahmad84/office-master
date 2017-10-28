@@ -149,67 +149,9 @@
      */
 
     // -> START Basic Fields
-//    Redux::setSection( $opt_name, array(
-//        'title'  => __( 'Basic Field', 'redux-framework-demo' ),
-//        'id'     => 'basic',
-//        'desc'   => __( 'Basic field with no subsections.', 'redux-framework-demo' ),
-//        'icon'   => 'el el-home',
-//        'fields' => array(
-//            array(
-//                'id'       => 'opt-text',
-//                'type'     => 'text',
-//                'title'    => __( 'Example Text', 'redux-framework-demo' ),
-//                'desc'     => __( 'Example description.', 'redux-framework-demo' ),
-//                'subtitle' => __( 'Example subtitle.', 'redux-framework-demo' ),
-//                'hint'     => array(
-//                    'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
-//                )
-//            )
-//        )
-//    ) );
-//
-//    Redux::setSection( $opt_name, array(
-//        'title' => __( 'Basic Fields', 'redux-framework-demo' ),
-//        'id'    => 'basic',
-//        'desc'  => __( 'Basic fields as subsections.', 'redux-framework-demo' ),
-//        'icon'  => 'el el-home'
-//    ) );
-//
-//    Redux::setSection( $opt_name, array(
-//        'title'      => __( 'Text', 'redux-framework-demo' ),
-//        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="">reduxframework</a>',
-//        'id'         => 'opt-text-subsection',
-//        'subsection' => true,
-//        'fields'     => array(
-//            array(
-//                'id'       => 'text-example',
-//                'type'     => 'text',
-//                'title'    => __( 'Text Field', 'redux-framework-demo' ),
-//                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-//                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-//                'default'  => 'Default Text',
-//            ),
-//        )
-//    ) );
-//
-//    Redux::setSection( $opt_name, array(
-//        'title'      => __( 'Text Area', 'redux-framework-demo' ),
-//        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/textarea/" target="_blank">//docs.reduxframework.com/core/fields/textarea/</a>',
-//        'id'         => 'opt-textarea-subsection',
-//        'subsection' => true,
-//        'fields'     => array(
-//            array(
-//                'id'       => 'textarea-example',
-//                'type'     => 'textarea',
-//                'title'    => __( 'Text Area Field', 'redux-framework-demo' ),
-//                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
-//                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
-//                'default'  => 'Default Text',
-//            ),
-//        )
-//    ) );
 
 
+// Header Section
 Redux::setSection( $opt_name, array(
    'id'        => 'header-options',
    'title'     => 'Header Options',
@@ -231,6 +173,98 @@ Redux::setSection( $opt_name, array(
          'default'   => array(
             'url'    => get_template_directory_uri().'/assets/img/slider/Office.png'
          ) 
+      )
+   )
+));
+
+// Footer Section
+Redux::setSection( $opt_name, array(
+   'id'        => 'footer-options',
+   'title'     => 'Footer Options',
+   'desc'      => 'This is footer options',
+   'icon'      => 'el el-folder-close'
+));
+Redux::setSection( $opt_name, array(
+   'id'        => 'footer_sub_options',
+   'title'     => 'Copyright Options',
+   'subsection'=> true,
+   'fields'    => array(
+      array(
+         'id'        => 'copyright_text',
+         'title'     => 'Copyright Text',
+         'type'      => 'editor',
+         'url'       => true,
+         'default'   => '© Copyright 2014, <a href="#">Your Website Link</a>. Theme by <a href="https://themewagon.com/" target="_blank">ThemeWagon', 
+         'args'      => array(
+            'wpautop'   => false
+         ) 
+      )
+   )
+));
+Redux::setSection( $opt_name, array(
+   'id'        => 'footer_sub_options_col_1',
+   'title'     => 'Column One',
+   'subsection'=> true,
+   'fields'    => array(
+      array(
+         'id'        => 'col_one_title',
+         'title'     => 'Title',
+         'type'      => 'text',
+         'default'   => 'Contact:'
+      ),
+      array(
+         'id'        => 'col_one_icon',
+         'title'     => 'Icon',
+         'type'      => 'text',
+         'default'   => 'fa-map-marker'
+      ),
+      array(
+         'id'        => 'col_one_txt',
+         'title'     => 'Description',
+         'type'      => 'editor',
+         'url'       => true,
+         'default'   => '<p class="footer-contact">
+               Via Ludovisi 39-45, Rome, 54267, Italy<br>
+               Phone: 1.800.245.356 Fax: 1.800.245.357<br> 
+               Email: hello@LawOffice.org<br></p>', 
+      )
+   )
+));
+Redux::setSection( $opt_name, array(
+   'id'        => 'footer_sub_options_col_2',
+   'title'     => 'Column Two',
+   'subsection'=> true,
+   'fields'    => array(
+      array(
+         'id'        => 'col_two_title',
+         'title'     => 'Title',
+         'type'      => 'text',
+         'default'   => 'Links'
+      ),
+      array(
+         'id'        => 'col_two_icon',
+         'title'     => 'Icon',
+         'type'      => 'text',
+         'default'   => 'fa-external-link'
+      )
+   )
+));
+Redux::setSection( $opt_name, array(
+   'id'        => 'footer_sub_options_col_3',
+   'title'     => 'Column Three',
+   'subsection'=> true,
+   'fields'    => array(
+      array(
+         'id'        => 'col_three_title',
+         'title'     => 'Title',
+         'type'      => 'text',
+         'default'   => 'Socialize'
+      ),
+      array(
+         'id'        => 'col_three_icon',
+         'title'     => 'Icon',
+         'type'      => 'text',
+         'default'   => 'fa-heart'
       )
    )
 ));
