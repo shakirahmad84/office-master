@@ -246,6 +246,15 @@ Redux::setSection( $opt_name, array(
          'title'     => 'Icon',
          'type'      => 'text',
          'default'   => 'fa-external-link'
+      ),
+      array(
+         'id'        => 'col_two_links',
+         'title'     => 'Links',
+         'type'      => 'slides',
+         'placeholder'=> array(
+            'title'     => 'Write here your link title',
+            'url'       => 'Write here your link url'
+         )
       )
    )
 ));
@@ -265,6 +274,15 @@ Redux::setSection( $opt_name, array(
          'title'     => 'Icon',
          'type'      => 'text',
          'default'   => 'fa-heart'
+      ),
+      array(
+         'id'        => 'col_three_links',
+         'title'     => 'Social Icons',
+         'type'      => 'slides',
+         'placeholder'=> array(
+            'title'     => 'Social icon font awesome class name',
+            'url'       => 'Social Links'
+         )
       )
    )
 ));

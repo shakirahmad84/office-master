@@ -16,11 +16,13 @@
             <h3><i class="fa <?php echo $office_master['col_two_icon']; ?>"></i>
                <?php echo $office_master['col_two_title']; ?>
             </h3>
-            <p> <a href="#"> About ( Who we are )</a></p>
-            <p> <a href="#"> Services ( What we do )</a></p>
-            <p> <a href="#"> Contact ( Feel free to contact )</a></p>
-            <p> <a href="#"> Blog ( Write to us )</a></p>
-            <p> <a href="#"> Team ( Meet the Team )</a></p>
+            <?php 
+            if(is_array($office_master['col_two_links'])){
+               foreach($office_master['col_two_links'] as $singleValue ){
+                  echo '<p> <a href="'.$singleValue['url'].'">'.$singleValue['title'].'</a></p>';
+               }
+            }
+            ?>
          </div>
 
          <div class="col-md-4">
@@ -28,18 +30,33 @@
                <?php echo $office_master['col_three_title']; ?>
             </h3>
             <div id="social-icons">
+              
+            <?php 
+            if(is_array($office_master['col_three_links'])){
+               foreach($office_master['col_three_links'] as $social_value){
+                  echo '<a href="'.$social_value['url'].'" class="btn-group google-plus"><i class="fa '.$social_value['title'].'"></i></a>';
+               }
+            }
+            ?>
+              
+              
+<!--
                <a href="#" class="btn-group google-plus">
-                     <i class="fa fa-google-plus"></i>
-                  </a>
+                  <i class="fa fa-google-plus"></i>
+               </a>
+                  
                <a href="#" class="btn-group linkedin">
                      <i class="fa fa-linkedin-square"></i>
                   </a>
+                  
                <a href="#" class="btn-group twitter">
                      <i class="fa fa-twitter"></i>
                   </a>
+                  
                <a href="#" class="btn-group facebook">
                      <i class="fa fa-facebook"></i>
                   </a>
+-->
             </div>
          </div>
       </div>

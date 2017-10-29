@@ -108,4 +108,4 @@ add_action('init', 'office_master_custom_post');
 
 include_once 'inc/cmb2.php';
 include_once 'inc/redux/redux-framework.php';
-include_once 'inc/redux/sample/office-master-theme-option.php';
+include_once 'inc/office-master-theme-option.php';
