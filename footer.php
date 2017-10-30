@@ -38,25 +38,7 @@
                }
             }
             ?>
-              
-              
-<!--
-               <a href="#" class="btn-group google-plus">
-                  <i class="fa fa-google-plus"></i>
-               </a>
-                  
-               <a href="#" class="btn-group linkedin">
-                     <i class="fa fa-linkedin-square"></i>
-                  </a>
-                  
-               <a href="#" class="btn-group twitter">
-                     <i class="fa fa-twitter"></i>
-                  </a>
-                  
-               <a href="#" class="btn-group facebook">
-                     <i class="fa fa-facebook"></i>
-                  </a>
--->
+            
             </div>
          </div>
       </div>

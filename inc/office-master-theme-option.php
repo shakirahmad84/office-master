@@ -287,7 +287,71 @@ Redux::setSection( $opt_name, array(
    )
 ));
 
-
+// Google Map
+// Footer Section
+Redux::setSection( $opt_name, array(
+   'id'        => 'Contact-options',
+   'title'     => 'Contact Page Options',
+   'desc'      => 'This is contact page options',
+   'icon'      => 'el el-address-book'
+));
+Redux::setSection( $opt_name, array(
+   'id'        => 'contact_map_sub_options',
+   'title'     => 'Map Options',
+   'subsection'=> true,
+   'fields'    => array(
+      array(
+         'id'        => 'map_url',
+         'title'     => 'Map URL',
+         'type'      => 'text',
+         'default'   => 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3618.727010735933!2d91.837871!3d24.907291700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1404919738144', 
+      )
+   )
+));
+Redux::setSection( $opt_name, array(
+   'id'        => 'contact_txt_sub_options',
+   'title'     => 'Contact Text',
+   'subsection'=> true,
+   'fields'    => array(
+      array(
+         'id'        => 'contact_text_title',
+         'title'     => 'Contact Heading',
+         'type'      => 'text',
+         'default'   => 'Find us at:', 
+      ),
+      array(
+         'id'        => 'contact_text',
+         'title'     => 'Contact Text',
+         'type'      => 'editor',
+         'default'   => '
+         <p class="block-author"> Johns, Smith & Associates</p>
+         <p>Via Ludovisi 39-45, Rome, 54267, Italy</p>
+         <p>Phone: 1.800.245.356</p>
+         <p>Fax: 1.800.245.357</p>
+         <em class="block-author">Email: hello@LawOffice.org </em> <br>
+         <br>',
+         'args'      => array(
+            'wpautop'   => false,
+         )
+      ),
+      array(
+         'id'        => 'social_heading',
+         'title'     => 'Social Heading',
+         'type'      => 'text',
+         'default'   => 'Social Link'
+      ),
+      array(
+         'id'        => 'contact_social_links',
+         'title'     => 'Social Icons',
+         'type'      => 'slides',
+         'default'   => 'Social Link',
+         'placeholder'=>   array(
+            'title'  => 'Social Title',
+            'url'    => 'Social links'
+         )
+      )
+   )
+));
 
 
     /*
